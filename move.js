@@ -92,8 +92,8 @@ function isGameOver(){
 
     if (gameOver){
         ctx.fillstyle = "white";
-        ctx.font = "50px Cambria";
-        ctx.fillText("game over!", canvas.width / 4.5, canvas.height / 2);
+        ctx.font = "50px Courier New";
+        ctx.fillText("game over!", canvas.width / 6.5, canvas.height / 2);
     }
 
     return gameOver;
@@ -102,8 +102,8 @@ function isGameOver(){
 
 function drawScore(){
     ctx.fillStyle = "white";
-    ctx.font = "10px Cambria";
-    ctx.fillText("score " + score, canvas.width-40, 10);
+    ctx.font = "10px Courier New";
+    ctx.fillText("score " + score, canvas.width-60, 10);
 }
 
 
