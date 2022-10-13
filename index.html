@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(rgb(190, 241, 190), rgb(240, 240, 143), rgb(191, 247, 191));
+            
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        canvas{
+            box-shadow: black 20px 10px 50px;
+            position: absolute;
+            top: 100px;
+            
+        }
+        h1{
+            padding: 0px;
+            font-weight: bold;
+            font-family: cambria;
+        }
+        header{
+            top: 0px;
+            position: absolute;
+        }
+        footer{
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>snake</h1>
+    </header>
+    
+    <main>
+        <canvas id="game" width="400" height="400"></canvas>
+    </main>
+    
+    <footer></footer>
+
+    <script src="./move.js"></script>
+
+</body>
+
+</html>
