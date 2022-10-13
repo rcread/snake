@@ -177,6 +177,10 @@ function keyDown(event){
     }
 }
 
+function directionUp(imgs){
+    var up = document.getElementById('')
+
+}
 
 
 
