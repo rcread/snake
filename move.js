@@ -56,8 +56,6 @@ function drawGame(){
         speed = 17;
     }
 
-
-
     setTimeout(drawGame, 1000/ speed);
 }
 
@@ -89,11 +87,16 @@ function isGameOver(){
         }
     }
 
-
     if (gameOver){
-        ctx.fillstyle = "white";
+        ctx.fillStyle = "white";
         ctx.font = "50px Courier New";
         ctx.fillText("game over!", canvas.width / 6.5, canvas.height / 2);
+    }
+
+    if (gameOver){
+        ctx.fillStyle = "white";
+        ctx.font = "20px Courier New";
+        ctx.fillText("press space to restart", canvas.width / 5.5, canvas.height / 1.7);
     }
 
     return gameOver;
@@ -177,12 +180,18 @@ function keyDown(event){
     }
 }
 
-function directionUp(imgs){
-    var up = document.getElementById('')
+// function directionUp(imgs){
+//     var up = document.getElementById('')
+// }
 
+document.body.addEventListener('keydown', newGame);
+
+function newGame(event){
+    if(event.keyCode == 32){
+        console.log("spacebar pressed");
+        window.location.reload();
+    }
 }
-
-
 
 drawGame();
 
