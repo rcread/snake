@@ -9,27 +9,23 @@ class SnakePart{
 }
 
 let speed = 7;
-
-let tileCount = 20;
+let tileCount = 19;
 let tileSize = canvas.width / tileCount - 2;
-let headX = 10;
-let headY = 10;
+let headX = 9;
+let headY = 9;
 const snakeParts = [];
 let tailLength = 2;
-
-let appleX = 5;
-let appleY = 5;
-
+let appleX = 4;
+let appleY = 4;
 let xVelocity = 0;
 let yVelocity = 0;
-
 let score = 0;
-
 const gulpSound = new Audio("gulp.mp3");
 
 function drawGame(){
     changeSnakePosition();
     let result = isGameOver();
+
     if(result){
         return;
     }
@@ -43,15 +39,19 @@ function drawGame(){
     if (score > 2){
         speed = 9;
     }
+
     if(score > 5){
         speed = 11;
     }
+
     if(score > 10){
         speed = 13;
     }
+
     if(score > 15){
         speed = 15;
     }
+
     if (score > 20){
         speed = 17;
     }
@@ -69,12 +69,15 @@ function isGameOver(){
     if(headX < 0){
         gameOver = true;
     }
+
     else if(headX >= tileCount){
     gameOver = true;
     }
+
     else if(headY < 0){
         gameOver = true;
     }
+
     else if(headY >= tileCount){
         gameOver = true;
     }
@@ -117,12 +120,14 @@ function clearScreen(){
 
 function drawSnake(){ 
     ctx.fillStyle = 'green';
+
     for(let i = 0; i < snakeParts.length; i++){
         let part = snakeParts[i];
         ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize);
     }
 
     snakeParts.push(new SnakePart(headX, headY));
+
     while(snakeParts.length > tailLength){
         snakeParts.shift();
     }
@@ -160,18 +165,21 @@ function keyDown(event){
         yVelocity = -1;
         xVelocity = 0;
     }
+
     if (event.keyCode == 40){
         if(yVelocity == -1)
             return;
         yVelocity = 1;
         xVelocity = 0;
     }
+
     if (event.keyCode == 37){
         if(xVelocity == 1)
             return;
         yVelocity = 0;
         xVelocity = -1;
     }
+    
     if (event.keyCode == 39){
         if(xVelocity == -1)
             return;
@@ -180,9 +188,34 @@ function keyDown(event){
     }
 }
 
-// function directionUp(imgs){
-//     var up = document.getElementById('')
-// }
+function moveUp(){
+    console.log('up button has been clicked');
+    if(yVelocity == 1)
+    return;
+    yVelocity = -1;
+    xVelocity = 0;
+}
+function moveLeft(){
+    console.log('left button has been clicked');
+    if(xVelocity == 1)
+    return;
+    xVelocity = -1;
+    yVelocity = 0;
+}
+function moveDown(){
+    console.log('down button has been clicked');
+    if(yVelocity == -1)
+    return;
+    yVelocity = 1;
+    xVelocity = 0;
+}
+function moveRight(){
+    console.log('right button has been clicked');
+    if(xVelocity == -1)
+    return;
+    xVelocity = 1;
+    yVelocity = 0;
+}
 
 document.body.addEventListener('keydown', newGame);
 
@@ -193,8 +226,8 @@ function newGame(event){
     }
 }
 
+function refreshButton(){
+    window.location.reload();
+}
+
 drawGame();
-
-
-// requestAnimationFrame
-// setTimeOut

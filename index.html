@@ -5,82 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
-    <link rel="stylesheet" src="main.css">
-<style>
-    
-body{
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(rgb(190, 241, 190), rgb(240, 240, 143), rgb(191, 247, 191));
-}
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: 500px;
-}
-canvas{
-    box-shadow: black 20px 10px 50px;
-    position: absolute;
-    top: 100px;
-}
-h1{
-    padding: 0px;
-    font-weight: bold;
-    font-family: courier new;
-}
-header{
-    top: 0px;
-    position: absolute;
-}
-div img{
-    height: 40px;
-    padding: 5px;
-    cursor: pointer;
-}
-.arrow-up{
-transform: rotate(270deg);
-}
-.arrow-left{
-    transform: rotate(180deg);
-}
-.arrow-down{
-    transform: rotate(90deg);
-}
-.controls{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.control-bar{
-    display: flex;
-    flex-direction: row;
-}
-</style>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <header>
         <h1>snake</h1>
+        <button id="refresh" class="refresh" type="button" onclick="refreshButton()"><img src="refresh.png"></button>
     </header>
     
     <main>
-        <canvas id="game" width="400" height="400"></canvas>
+        <canvas id="game" width="360" height="360"></canvas>
     </main>
     
     <footer>
-        <p></p>
+        
         <div class="controls">
-            <div><img class="arrow-up" id="arrow-up" src="arrow.png" onclick="directionUp(this);"></div>
+            <button id="arrow-up" title="Up" type="button" onclick="moveUp()"><img src="arrow.png" ></button>
             <div class="control-bar">
-                <div><img class="arrow-left" id="arrow-left" src="arrow.png" onclick="directionLeft(this);"></div>
-                <div><img class="arrow-down" id="arrow-down" src="arrow.png" onclick="directionDown(this);"></div>
-                <div><img class="arrow-right" id="arrow-right" src="arrow.png" onclick="directionRight(this);"></div>
+                <button id="arrow-left" title="Left" type="button" onclick="moveLeft()"><img src="arrow.png" ></button>
+                <button id="arrow-down" title="Down" type="button" onclick="moveDown()"><img src="arrow.png" ></button>
+                <button id="arrow-right" title="Right" type="button" onclick="moveRight()"><img src="arrow.png" ></button>
             </div>
             
         </div>
